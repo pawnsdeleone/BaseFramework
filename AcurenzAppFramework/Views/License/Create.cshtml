@@ -1,0 +1,66 @@
+﻿@model AcurenzAppFramework.Data.LicenseType
+@using TwitterBootstrapMVC
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+    @using (var f = Html.Bootstrap().Begin(new Form().Type(FormType.Horizontal)))
+    {
+        <div class="col-sm-8 col-sm-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">License Types</h3>
+                    <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                </div>
+                <div class="panel-body ">
+                    @f.FormGroup().TextBoxFor(x => x.DisplayName).Placeholder("Enter Display").Label().LabelText("Display")
+                    @f.FormGroup().TextBoxFor(x => x.Description).Placeholder("Enter Description").Label().LabelText("Description")
+                    @*@f.FormGroup().TextBoxFor(x => x.LookupName).Disabled().Label().LabelText("Lookup Name")*@
+                    @f.FormGroup().TextBoxFor(x => x.LookupName).TypeAhead(new TypeAhead().Action("GetStates"))
+                    @*@Html.Bootstrap().TextBoxFor(x => x.State).TypeAhead(new TypeAhead().Action("GetStates"))*@
+                    <div class="col-sm-5 col-sm-offset-3">
+                        @Html.Bootstrap().SubmitButton().Text("Create")
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+        
+<style>
+    .panel-heading span {
+        margin-top: -20px;
+        font-size: 15px;
+    }
+
+    .row {
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+</style>
+@section Scripts {
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        $('.panel-heading span.clickable').on("click", function (e) {
+            if ($(this).hasClass('panel-collapsed')) {
+                // expand the panel
+                $(this).parents('.panel').find('.panel-body').slideDown();
+                $(this).removeClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+
+            }
+            else {
+                // collapse the panel
+                $(this).parents('.panel').find('.panel-body').slideUp();
+                $(this).addClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+
+            }
+        });
+    </script>
+}

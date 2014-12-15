@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Driver Detail</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputEmail" class="control-label col-xs-2">Email</label>
+                    <div class="col-xs-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="control-label col-xs-2">Password</label>
+                    <div class="col-xs-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10">
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Address History</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+        </div>
+        <div class="panel-body">
+            LexisNexis Corporate Affiliations<br />
+            121 Chanlon Road,<br />
+            South Building – First Floor,<br />
+            New Providence, NJ 07974<br />
+            phone: 800.340.3244
+        </div>
+    </div>
+</div>
+
+<style>
+    .panel-heading span {
+        margin-top: -20px;
+        font-size: 15px;
+    }
+
+    .row {
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+  
+</style>
+@section Scripts {
+
+    <script type="text/javascript">
+        $('.panel-heading span.clickable').on("click", function (e) {
+            if ($(this).hasClass('panel-collapsed')) {
+                // expand the panel
+                $(this).parents('.panel').find('.panel-body').slideDown();
+                $(this).removeClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+
+            }
+            else {
+                // collapse the panel
+                $(this).parents('.panel').find('.panel-body').slideUp();
+                $(this).addClass('panel-collapsed');
+                $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+
+            }
+        });
+    </script>
+}
+<script type="text/javascript">
+
+</script>
