@@ -54,13 +54,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\UoW &amp; Repo Framework - Northwind\Repository\Repository.csproj">
-      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
-      <Name>Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AcurenzAppFramework.Data\AcurenzAppFramework.Data.csproj">
       <Project>{d8a40271-9ff2-49b2-adb1-74a99a9efde4}</Project>
       <Name>AcurenzAppFramework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

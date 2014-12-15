@@ -57,7 +57,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\UoW &amp; Repo Framework - Northwind\Repository\Repository.csproj">
+    <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
       <Name>Repository</Name>
     </ProjectReference>

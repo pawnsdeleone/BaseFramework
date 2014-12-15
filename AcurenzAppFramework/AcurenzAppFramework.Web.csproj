@@ -365,10 +365,6 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\UoW &amp; Repo Framework - Northwind\Repository\Repository.csproj">
-      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
-      <Name>Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AcurenzAppFramework.DataAccess\AcurenzAppFramework.DataAccess.csproj">
       <Project>{c81e61be-c76e-4c3a-9425-6fe843525799}</Project>
       <Name>AcurenzAppFramework.DataAccess</Name>
@@ -380,6 +376,10 @@
     <ProjectReference Include="..\AcurenzAppFramework.Service\AcurenzAppFramework.Service.csproj">
       <Project>{3226b193-a23b-499c-8499-163ffe24b17d}</Project>
       <Name>AcurenzAppFramework.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{6e682a14-c872-4813-b620-76e108dea683}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
